@@ -43,9 +43,6 @@
 
 RDB 和 AOF 两种模式
 
-# 变更日志
-
-> [变更日志](https://github.com/houbb/cache/blob/master/doc/CHANGELOG.md)
 
 # 快速开始
 
