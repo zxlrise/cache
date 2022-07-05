@@ -325,30 +325,30 @@ Assert.assertEquals(2, cache.size());
 
 文档是对项目开发过程中遇到的一些问题的详细记录，主要是为了帮助没有基础的小伙伴快速理解这个项目。
 
-1.[实现固定缓存大小](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E5%9B%BA%E5%AE%9A%E7%BC%93%E5%AD%98%E5%A4%A7%E5%B0%8F)
+1. [实现固定缓存大小](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E5%9B%BA%E5%AE%9A%E7%BC%93%E5%AD%98%E5%A4%A7%E5%B0%8F)
 
-2.[redis expire 过期原理](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%8E%9F%E7%90%86)
+2. [redis expire 过期原理](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%8E%9F%E7%90%86)
 
-3.[内存数据如何重启不丢失](https://github.com/zxlrise/cache/wiki/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E9%87%8D%E5%90%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%EF%BC%9F)
+3. [内存数据如何重启不丢失](https://github.com/zxlrise/cache/wiki/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E9%87%8D%E5%90%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%EF%BC%9F)
 
-4.[添加监听器 ](https://github.com/zxlrise/cache/wiki/%E6%B7%BB%E5%8A%A0%E7%9B%91%E5%90%AC%E5%99%A8)
+4. [添加监听器 ](https://github.com/zxlrise/cache/wiki/%E6%B7%BB%E5%8A%A0%E7%9B%91%E5%90%AC%E5%99%A8)
 
-5.[过期策略的另一种实现思路](https://github.com/zxlrise/cache/wiki/%E8%BF%87%E6%9C%9F%E7%AD%96%E7%95%A5%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
+5. [过期策略的另一种实现思路](https://github.com/zxlrise/cache/wiki/%E8%BF%87%E6%9C%9F%E7%AD%96%E7%95%A5%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
 
-6.[redis AOF 持久化原理详解及实现](https://github.com/zxlrise/cache/wiki/redis-AOF-%E6%8C%81%E4%B9%85%E5%8C%96%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
+6. [redis AOF 持久化原理详解及实现](https://github.com/zxlrise/cache/wiki/redis-AOF-%E6%8C%81%E4%B9%85%E5%8C%96%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
 
-7.[朴素 LRU 淘汰算法性能优化](https://github.com/zxlrise/cache/wiki/%E6%9C%B4%E7%B4%A0-LRU-%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
+7. [朴素 LRU 淘汰算法性能优化](https://github.com/zxlrise/cache/wiki/%E6%9C%B4%E7%B4%A0-LRU-%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
 
-8.[LRU 缓存淘汰算法如何避免缓存污染](https://github.com/zxlrise/cache/wiki/LRU-%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93)
+8. [LRU 缓存淘汰算法如何避免缓存污染](https://github.com/zxlrise/cache/wiki/LRU-%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93)
 
-9.[缓存淘汰算法 LFU 最少使用频次](https://github.com/zxlrise/cache/wiki/%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95-LFU-%E6%9C%80%E5%B0%91%E4%BD%BF%E7%94%A8%E9%A2%91%E6%AC%A1)
+9. [缓存淘汰算法 LFU 最少使用频次](https://github.com/zxlrise/cache/wiki/%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95-LFU-%E6%9C%80%E5%B0%91%E4%BD%BF%E7%94%A8%E9%A2%91%E6%AC%A1)
 
-10.[clock时钟淘汰算法详解及实现](https://github.com/zxlrise/cache/wiki/clock%E6%97%B6%E9%92%9F%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
+10. [clock时钟淘汰算法详解及实现](https://github.com/zxlrise/cache/wiki/clock%E6%97%B6%E9%92%9F%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
 
-11.[redis expire 过期实现随机获取keys](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E8%8E%B7%E5%8F%96keys)
+11. [redis expire 过期实现随机获取keys](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E8%8E%B7%E5%8F%96keys)
 
-12.[redis渐进式rehash详解](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
+12. [redis渐进式rehash详解](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
 
-13.[实现自己的 HashMap](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84-HashMap)
+13. [实现自己的 HashMap](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84-HashMap)
 
-14.[实现渐进式 rehash map](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
+14. [实现渐进式 rehash map](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
