@@ -6,7 +6,12 @@
 
 有高性能的地方，就有 cache。
 
-🎨🎨🎨🎨💻💻💻💻✏️✏️✏️✏️
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.houbb/cache/badge.svg)](https://github.com/zxlrise)
+[![Build Status](https://www.travis-ci.org/houbb/cache.svg?branch=master)](https://github.com/zxlrise)
+[![](https://img.shields.io/badge/license-Apache2-FF0080.svg)](https://github.com/zxlrise)
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/zxlrise)
+
+## 创作目的
 
 ## 2、创作目的
 
