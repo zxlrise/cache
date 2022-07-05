@@ -1,4 +1,4 @@
-# 项目简介
+## 1、项目简介
 
 [Cache](https://github.com/houbb/cache) 用于实现一个可拓展的本地缓存。
 
@@ -11,7 +11,7 @@
 [![](https://img.shields.io/badge/license-Apache2-FF0080.svg)](https://github.com/houbb/cache/blob/master/LICENSE.txt)
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/houbb/cache)
 
-## 创作目的
+## 2、创作目的
 
 - 为日常开发提供一套简单易用的缓存框架
 
@@ -19,7 +19,7 @@
 
 - 学以致用，开发一个类似于 redis 的渐进式缓存框架
 
-## 特性
+## 3、特性
 
 - MVP 开发策略
 
@@ -44,15 +44,15 @@
 RDB 和 AOF 两种模式
 
 
-# 快速开始
+## 4、快速开始
 
-## 准备
+### 4.1、准备
 
 JDK1.7 及其以上版本
 
 Maven 3.X 及其以上版本
 
-## maven 项目依赖
+### 4.2、maven 项目依赖
 
 ```xml
 <dependency>
@@ -62,7 +62,7 @@ Maven 3.X 及其以上版本
 </dependency>
 ```
 
-## 入门测试
+### 4.3、入门测试
 
 ```java
 ICache<String, String> cache = CacheBs.<String,String>newInstance()
@@ -83,7 +83,7 @@ Assert.assertEquals(2, cache.size());
 [3, 4]
 ```
 
-## 引导类配置属性
+### 4.4、引导类配置属性
 
 `CacheBs` 作为缓存的引导类，支持 fluent 写法，编程更加优雅便捷。
 
@@ -97,7 +97,7 @@ ICache<String, String> cache = CacheBs.<String,String>newInstance()
                 .build();
 ```
 
-## 淘汰策略
+### 4.5、淘汰策略
 
 目前内置了几种淘汰策略，可以直接通过 `CacheEvicts` 工具类创建。
 
@@ -111,7 +111,7 @@ ICache<String, String> cache = CacheBs.<String,String>newInstance()
 | lru2Q | 基于 LRU 2Q 的改进版 LRU 实现，命中率优于朴素LRU |
 | lru2 | 基于 LRU-2 的改进版 LRU 实现，命中率优于 lru2Q |
 
-## 过期支持
+### 4.6、过期支持
 
 ```java
 ICache<String, String> cache = CacheBs.<String,String>newInstance()
@@ -131,15 +131,15 @@ System.out.println(cache.keySet());
 
 `cache.expire("1", 10);` 指定对应的 key 在 10ms 后过期。
 
-# 删除监听器
+## 5、删除监听器
 
-## 说明
+### 5.1、说明
 
 淘汰和过期，这些都是缓存的内部行为。
 
 如果用户也关心的话，可以自定义删除监听器。
 
-## 自定义监听器
+### 5.2、自定义监听器
 
 直接实现 `ICacheRemoveListener` 接口即可。
 
@@ -154,7 +154,7 @@ public class MyRemoveListener<K,V> implements ICacheRemoveListener<K,V> {
 }
 ```
 
-## 使用
+### 5.3、使用
 
 ```java
 ICache<String, String> cache = CacheBs.<String,String>newInstance()
@@ -172,9 +172,9 @@ cache.put("2", "2");
 【删除提示】可恶，我竟然被删除了！2
 ```
 
-# 添加慢操作监听器
+## 6、添加慢操作监听器
 
-## 说明
+### 6.1、说明
 
 redis 中会存储慢操作的相关日志信息，主要是由两个参数构成：
 
@@ -188,7 +188,7 @@ redis 中会存储慢操作的相关日志信息，主要是由两个参数构�
 
 所以我们引入类似于删除的监听器。
 
-## 自定义监听器
+### 6.2、自定义监听器
 
 实现接口 `ICacheSlowListener`
 
@@ -210,7 +210,7 @@ public class MySlowListener implements ICacheSlowListener {
 }
 ```
 
-## 使用
+### 6.3、使用
 
 ```java
 ICache<String, String> cache = CacheBs.<String,String>newInstance()
@@ -236,15 +236,15 @@ cache.get("1");
 
 也可以直接接入报警系统，及时反馈问题。
 
-# 添加 load 加载器
+## 7、添加 load 加载器
 
-## 说明
+### 7.1、说明
 
 有时候我们需要在 cache 初始化的时候，添加对应的数据初始化。
 
 后期可以从文件等地方加载数据。
 
-## 实现
+### 7.2、实现
 
 实现 `ICacheLoad` 接口即可。
 
@@ -262,7 +262,7 @@ public class MyCacheLoad implements ICacheLoad<String,String> {
 
 我们在缓存初始化的时候，放入 2 个元素。
 
-## 测试效果
+### 7.3、测试效果
 
 ```java
 ICache<String, String> cache = CacheBs.<String,String>newInstance()
@@ -272,15 +272,15 @@ ICache<String, String> cache = CacheBs.<String,String>newInstance()
 Assert.assertEquals(2, cache.size());
 ```
 
-# 添加 persist 持久化类
+## 8、添加 persist 持久化类
 
-## 说明
+### 8.1、说明
 
 如果我们只是把文件放在内存中，应用重启信息就丢失了。
 
 有时候我们希望这些 key/value 信息可以持久化，存储到文件或者 database 中。
 
-## 持久化
+### 8.2、持久化
 
 `CachePersists.<String, String>dbJson("1.rdb")` 指定将数据文件持久化到文件中。
 
@@ -307,7 +307,7 @@ public void persistTest() throws InterruptedException {
 {"key":"1","value":"1"}
 ```
 
-## 加载器
+### 8.3、加载器
 
 存储之后，可以使用对应的加载器读取文件内容：
 
@@ -319,32 +319,34 @@ ICache<String, String> cache = CacheBs.<String,String>newInstance()
 Assert.assertEquals(2, cache.size());
 ```
 
-# 开发文档
+## 开发文档
 
-[实现固定缓存大小](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E5%9B%BA%E5%AE%9A%E7%BC%93%E5%AD%98%E5%A4%A7%E5%B0%8F)
+文档是对项目开发过程中遇到的一些问题的详细记录，主要是为了帮助没有基础的小伙伴快速理解这个项目。
 
-[redis expire 过期原理](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%8E%9F%E7%90%86)
+[1.实现固定缓存大小](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E5%9B%BA%E5%AE%9A%E7%BC%93%E5%AD%98%E5%A4%A7%E5%B0%8F)
 
-[内存数据如何重启不丢失](https://github.com/zxlrise/cache/wiki/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E9%87%8D%E5%90%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%EF%BC%9F)
+[2.redis expire 过期原理](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%8E%9F%E7%90%86)
 
-[添加监听器 ](https://github.com/zxlrise/cache/wiki/%E6%B7%BB%E5%8A%A0%E7%9B%91%E5%90%AC%E5%99%A8)
+[3.内存数据如何重启不丢失](https://github.com/zxlrise/cache/wiki/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E9%87%8D%E5%90%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%EF%BC%9F)
 
-[过期策略的另一种实现思路](https://github.com/zxlrise/cache/wiki/%E8%BF%87%E6%9C%9F%E7%AD%96%E7%95%A5%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
+[4.添加监听器 ](https://github.com/zxlrise/cache/wiki/%E6%B7%BB%E5%8A%A0%E7%9B%91%E5%90%AC%E5%99%A8)
 
-[redis AOF 持久化原理详解及实现](https://github.com/zxlrise/cache/wiki/redis-AOF-%E6%8C%81%E4%B9%85%E5%8C%96%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
+[5.过期策略的另一种实现思路](https://github.com/zxlrise/cache/wiki/%E8%BF%87%E6%9C%9F%E7%AD%96%E7%95%A5%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
 
-[朴素 LRU 淘汰算法性能优化](https://github.com/zxlrise/cache/wiki/%E6%9C%B4%E7%B4%A0-LRU-%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
+[6.redis AOF 持久化原理详解及实现](https://github.com/zxlrise/cache/wiki/redis-AOF-%E6%8C%81%E4%B9%85%E5%8C%96%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
 
-[LRU 缓存淘汰算法如何避免缓存污染]([https://mp.weixin.qq.com/s/H8gOujnlTinctjVQqW0ITA](https://github.com/zxlrise/cache/wiki/LRU-%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93))
+[7.朴素 LRU 淘汰算法性能优化](https://github.com/zxlrise/cache/wiki/%E6%9C%B4%E7%B4%A0-LRU-%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
 
-[缓存淘汰算法 LFU 最少使用频次](https://github.com/zxlrise/cache/wiki/%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95-LFU-%E6%9C%80%E5%B0%91%E4%BD%BF%E7%94%A8%E9%A2%91%E6%AC%A1)
+[8.LRU 缓存淘汰算法如何避免缓存污染](https://github.com/zxlrise/cache/wiki/LRU-%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93)
 
-[clock时钟淘汰算法详解及实现](https://github.com/zxlrise/cache/wiki/clock%E6%97%B6%E9%92%9F%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
+[9.缓存淘汰算法 LFU 最少使用频次](https://github.com/zxlrise/cache/wiki/%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95-LFU-%E6%9C%80%E5%B0%91%E4%BD%BF%E7%94%A8%E9%A2%91%E6%AC%A1)
 
-[redis expire 过期实现随机获取keys]([https://mp.weixin.qq.com/s/h9oub0TT94ObaiKZ7s5VsA](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E8%8E%B7%E5%8F%96keys))
+[10clock时钟淘汰算法详解及实现](https://github.com/zxlrise/cache/wiki/clock%E6%97%B6%E9%92%9F%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
 
-[redis渐进式rehash详解](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
+[11.redis expire 过期实现随机获取keys](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E8%8E%B7%E5%8F%96keys)
 
-[实现自己的 HashMap](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84-HashMap)
+[12.redis渐进式rehash详解](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
 
-[实现渐进式 rehash map](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
+[13.实现自己的 HashMap](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84-HashMap)
+
+[14.实现渐进式 rehash map](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
