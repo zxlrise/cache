@@ -322,106 +322,32 @@ ICache<String, String> cache = CacheBs.<String,String>newInstance()
 Assert.assertEquals(2, cache.size());
 ```
 
-# 后期 Road-MAP
+# 开发文档
 
-## 淘汰策略
+[实现固定缓存大小](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E5%9B%BA%E5%AE%9A%E7%BC%93%E5%AD%98%E5%A4%A7%E5%B0%8F)
 
-- [ ] CLOCK 算法
+[redis expire 过期原理](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%8E%9F%E7%90%86)
 
-- [ ] SC 二次机会
+[内存数据如何重启不丢失](https://github.com/zxlrise/cache/wiki/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E9%87%8D%E5%90%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%EF%BC%9F)
 
-- [ ] 老化算法
+[添加监听器 ](https://github.com/zxlrise/cache/wiki/%E6%B7%BB%E5%8A%A0%E7%9B%91%E5%90%AC%E5%99%A8)
 
-- [ ] 弱引用
+[过期策略的另一种实现思路](https://github.com/zxlrise/cache/wiki/%E8%BF%87%E6%9C%9F%E7%AD%96%E7%95%A5%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF)
 
-## 过期特性
+[redis AOF 持久化原理详解及实现](https://github.com/zxlrise/cache/wiki/redis-AOF-%E6%8C%81%E4%B9%85%E5%8C%96%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
 
-- [ ] 过期策略添加随机返回
+[朴素 LRU 淘汰算法性能优化](https://github.com/zxlrise/cache/wiki/%E6%9C%B4%E7%B4%A0-LRU-%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
 
-- [ ] expireAfterWrite()
+[LRU 缓存淘汰算法如何避免缓存污染]([https://mp.weixin.qq.com/s/H8gOujnlTinctjVQqW0ITA](https://github.com/zxlrise/cache/wiki/LRU-%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E7%BC%93%E5%AD%98%E6%B1%A1%E6%9F%93))
 
-- [ ] expireAfterAccess()
+[缓存淘汰算法 LFU 最少使用频次](https://github.com/zxlrise/cache/wiki/%E7%BC%93%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95-LFU-%E6%9C%80%E5%B0%91%E4%BD%BF%E7%94%A8%E9%A2%91%E6%AC%A1)
 
-## 持久化
+[clock时钟淘汰算法详解及实现](https://github.com/zxlrise/cache/wiki/clock%E6%97%B6%E9%92%9F%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0)
 
-- [ ] AOF 混合 RDB
+[redis expire 过期实现随机获取keys]([https://mp.weixin.qq.com/s/h9oub0TT94ObaiKZ7s5VsA](https://github.com/zxlrise/cache/wiki/redis-expire-%E8%BF%87%E6%9C%9F%E5%AE%9E%E7%8E%B0%E9%9A%8F%E6%9C%BA%E8%8E%B7%E5%8F%96keys))
 
-## 统计
+[redis渐进式rehash详解](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
 
-- [ ] 命中率
+[实现自己的 HashMap](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84-HashMap)
 
-- [ ] keys 数量
-
-- [ ] evict 数量
-
-- [ ] expire 数量
-
-- [ ] 耗时统计
-
-## 并发
-
-- [ ] 并发安全保障
-
-## 其他
-
-- [ ] 异步 callable 操作
-
-- [ ] spring 整合
-
-提供 `@Cacheable` 系列注解
-
-- [ ] 文件压缩
-
-- [ ] 独立服务端
-
-提供类似于 redis-server + redis-client 的拆分，便于独立于应用作为服务存在。
-
-# 拓展阅读
-
-[java从零手写实现redis（一）如何实现固定大小的缓存？](https://mp.weixin.qq.com/s/6J2K2k4Db_20eGU6xGYVTw)
-
-[java从零手写实现redis（三）redis expire 过期原理](https://mp.weixin.qq.com/s/BWfBc98oLqhAPLN2Hgkwow)
-
-[java从零手写实现redis（三）内存数据如何重启不丢失？](https://mp.weixin.qq.com/s/G41SRZQm1_0uQXBAGHAYbw)
-
-[java从零手写实现redis（四）添加监听器](https://mp.weixin.qq.com/s/6pIG3l_wkXBwSuJvj_KwMA)
-
-[java从零手写实现redis（五）过期策略的另一种实现思路](https://mp.weixin.qq.com/s/Atrd36UGds9_w_NFQDoEQg)
-
-[java从零手写实现redis（六）AOF 持久化原理详解及实现](https://mp.weixin.qq.com/s/rFuSjNF43Ybxy-qBCtgasQ)
-
-[java从零开始手写redis（七）LRU 缓存淘汰策略详解](https://mp.weixin.qq.com/s/X-OIqu_rgLskvbF2rZMP6Q)
-
-[java从零开始手写redis（八）朴素 LRU 淘汰算法性能优化](https://mp.weixin.qq.com/s/H8gOujnlTinctjVQqW0ITA)
-
-[java 从零开始手写 redis（九）LRU 缓存淘汰算法如何避免缓存污染](https://mp.weixin.qq.com/s/jzM_wDw37QXTeYMFYtRJaw)
-
-[java 从零开始手写 redis（十）缓存淘汰算法 LFU 最少使用频次](https://mp.weixin.qq.com/s/mUyCTCVObwY8XdLcO1pOWg)
-
-[java 从零开始手写 redis（11）clock时钟淘汰算法详解及实现](https://mp.weixin.qq.com/s/h9oub0TT94ObaiKZ7s5VsA)
-
-[java 从零开始手写 redis（12）redis expire 过期如何实现随机获取keys？](https://mp.weixin.qq.com/s/YEBPtrOWIyBl9dsHa59JYg)
-
-[java从零开始手写 redis（13）HashMap 源码原理详解](https://mp.weixin.qq.com/s/SURVmTf6K_ou85fShFzrNA)
-
-[java 从零开始手写 redis（14）redis渐进式rehash详解](https://mp.weixin.qq.com/s/gPD-4wCwirdyO5QyHrXOIA)
-
-[java 从零开始手写 redis（15）实现自己的 HashMap](https://mp.weixin.qq.com/s/e5fskVfeDMTuJhjEAd1gQw)
-
-[java 从零开始手写 redis（16）实现渐进式 rehash map](https://mp.weixin.qq.com/s/Lwp2js4lrHAbuQ5Fexer6w)
-
-【实战汇总】
-
-[缓存实战（1）缓存雪崩、缓存击穿和缓存穿透入门简介及解决方案](https://mp.weixin.qq.com/s/yYE-zqJOyiLlEYXRj5by9g)
-
-[缓存实战（2）布隆过滤器是啥？guava 的 BloomFilter 使用](https://mp.weixin.qq.com/s/dY-0jE23jggU3wqjdHGyZQ)
-
-[缓存实战（3）让你彻底搞懂布隆过滤器！实现一个自己的BloomFilter](https://mp.weixin.qq.com/s/UsIjHfiy96aZgpzybuBYgg)
-
-[缓存实战（4）bloom filter 使用最佳实践，让你少踩坑](https://mp.weixin.qq.com/s/obqh0FMzahRFa5sNe5eq3g)
-
-[java 从零实现属于你的 redis 分布式锁](https://mp.weixin.qq.com/s/MzybPDRGwaWXX8viE8adAA)
-
-[3天时间，我是如何解决redis bigkey删除问题的？](https://mp.weixin.qq.com/s/06tjn76uebvgfzYaahdY0g)
-
-[redis 多路复用](http://houbb.github.io/2018/09/08/redis-learn-45-multi-io)
+[实现渐进式 rehash map](https://github.com/zxlrise/cache/wiki/%E5%AE%9E%E7%8E%B0%E6%B8%90%E8%BF%9B%E5%BC%8F-rehash-map)
