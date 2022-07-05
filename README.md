@@ -6,10 +6,7 @@
 
 有高性能的地方，就有 cache。
 
-[![Maven Central](https://github.com/zxlrise)
-[![Build Status](https://github.com/zxlrise)
-[![](https://github.com/zxlrise)
-[![Open Source Love](https://github.com/zxlrise)
+🎨🎨🎨🎨💻💻💻💻✏️✏️✏️✏️
 
 ## 2、创作目的
 
