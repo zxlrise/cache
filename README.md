@@ -43,7 +43,7 @@
 
 - 支持 load 初始化和 persist 持久化
 
-RDB 和 AOF 两种模式
+- RDB 和 AOF 两种模式
 
 
 ## 4、快速开始
